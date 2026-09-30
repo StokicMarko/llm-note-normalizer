@@ -1,0 +1,162 @@
+[
+  {
+    "input": "Qty 4x, scale 1:50",
+    "expected": {
+      "quantity": 4,
+      "scale": "1:50",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "3 pcs - scala 1/20",
+    "expected": {
+      "quantity": 3,
+      "scale": "1:20",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "Scale 1:100",
+    "expected": {
+      "quantity": null,
+      "scale": "1:100",
+      "needs_review": true
+    }
+  },
+  {
+    "input": "10 stk. målestok 1:25",
+    "expected": {
+      "quantity": 10,
+      "scale": "1:25",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "x2 1:10",
+    "expected": {
+      "quantity": 2,
+      "scale": "1:10",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "Quantity: two, scale 1:50",
+    "expected": {
+      "quantity": 2,
+      "scale": "1:50",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "1:1 full size, 5 signs",
+    "expected": {
+      "quantity": 5,
+      "scale": "1:1",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "Make 6 copies",
+    "expected": {
+      "quantity": 6,
+      "scale": null,
+      "needs_review": true
+    }
+  },
+  {
+    "input": "scale 1:50 or 1:100, 4 pcs",
+    "expected": {
+      "quantity": 4,
+      "scale": null,
+      "needs_review": true
+    }
+  },
+  {
+    "input": "4 pcs scale 1:50 (see email)",
+    "expected": {
+      "quantity": 4,
+      "scale": "1:50",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "qty 12, scale: 1 to 20",
+    "expected": {
+      "quantity": 12,
+      "scale": "1:20",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "Scala 1:200 - 1 pz",
+    "expected": {
+      "quantity": 1,
+      "scale": "1:200",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "PLEASE PRINT 8 OF THESE AT 1:5",
+    "expected": {
+      "quantity": 8,
+      "scale": "1:5",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "no notes",
+    "expected": {
+      "quantity": null,
+      "scale": null,
+      "needs_review": true
+    }
+  },
+  {
+    "input": "3x 1:50, plus 2x 1:100",
+    "expected": {
+      "quantity": null,
+      "scale": null,
+      "needs_review": true
+    }
+  },
+  {
+    "input": "Antal: 15 / Skala 1:75",
+    "expected": {
+      "quantity": 15,
+      "scale": "1:75",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "qty4 scl1:50",
+    "expected": {
+      "quantity": 4,
+      "scale": "1:50",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "7 pcs, 50% size",
+    "expected": {
+      "quantity": 7,
+      "scale": null,
+      "needs_review": true
+    }
+  },
+  {
+    "input": "Schaal 1:20, aantal 9",
+    "expected": {
+      "quantity": 9,
+      "scale": "1:20",
+      "needs_review": false
+    }
+  },
+  {
+    "input": "2 stk, skala 1/50",
+    "expected": {
+      "quantity": 2,
+      "scale": "1:50",
+      "needs_review": false
+    }
+  }
+]
