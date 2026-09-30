@@ -27,9 +27,8 @@ Try a single note: `python parser.py "Qty 4x, scale 1:50"`
 
 ## Results
 
-TODO: fill in after running. Accuracy on the first run, what I changed in the prompt,
-accuracy after.
+TODO: Not evaluated yet. This is a first version that has not been run against the full test set.
 
 ## Limits
 
-TODO: what still fails and why. Test notes are invented, not real customer data.
+TODO: Early starter project. The test notes are invented, not real customer data, and the prompt has not been tuned.
