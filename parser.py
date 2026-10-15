@@ -12,11 +12,11 @@ Return ONLY a JSON object with exactly these keys:
 - "scale": string in the form "1:50", or null if missing or unclear
 - "needs_review": true if quantity or scale is missing, ambiguous or
   contradictory, otherwise false
-Notes can be in English, Danish, Italian, Dutch or mixed. Write scales as
+Notes can be in English, Danish, Italian or mixed. Write scales as
 "1:N" even if the note says "1/20" or "1 to 20". Do not guess.
 No other text, no explanations, no code fences."""
 
-SCALE_PATTERN = re.compile(r"^\d+:\d+$")
+SCALE_PATTERN = re.compile(r"^\d+:\d+$")  #regex to match scales format like "1:50"
 FALLBACK = {"quantity": None, "scale": None, "needs_review": True}
 
 
@@ -40,11 +40,12 @@ def parse_note(text, client=None):
     client = client or Anthropic()  # reads ANTHROPIC_API_KEY from the environment
     response = client.messages.create(
         model=MODEL,
-        max_tokens=200,
+        max_tokens=2000,  # the model may think first, and thinking counts against this limit
         system=SYSTEM,
         messages=[{"role": "user", "content": text}],
     )
-    raw = response.content[0].text.strip()
+    # The reply can start with a thinking block, so pick the text block explicitly.
+    raw = next((b.text for b in response.content if b.type == "text"), "").strip()
     try:
         return validate(json.loads(raw))
     except json.JSONDecodeError:

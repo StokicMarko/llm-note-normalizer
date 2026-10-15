@@ -27,7 +27,20 @@ Try a single note: `python parser.py "Qty 4x, scale 1:50"`
 
 ## Results
 
-TODO: Not evaluated yet. This is a first version that has not been run against the full test set.
+One run of `run_tests.py` on the 20 invented notes in `cases.json`, with `claude-sonnet-5-5`
+(October 2026):
+
+    Fully correct: 19/20 (95%)
+      quantity: 20/20
+      scale: 19/20
+      needs_review: 19/20
+
+The one failure is `"7 pcs, 50% size"`. The test expects no scale and `needs_review: true`,
+because a percentage is not a `1:N` scale. The model converted it to `"1:2"` instead. The prompt
+does not say how to treat percentages yet, so this is a decision to make, not only a model error.
+
+This is a single run. The model can answer slightly differently each time, so the score is a
+rough indication, not a measured accuracy.
 
 ## Limits
 
